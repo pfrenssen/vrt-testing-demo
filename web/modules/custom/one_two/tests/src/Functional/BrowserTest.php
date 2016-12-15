@@ -37,7 +37,7 @@ class BrowserTest extends BrowserTestBase {
   /**
    * Tests if the user registration page can be correctly retrieved in tests.
    */
-  function testDrupalGet() {
+  public function testDrupalGet() {
     $this->drupalGet('user/register');
     $this->assertSession()->pageTextContains('Create new account');
     $this->assertSession()->fieldExists('Email address');
@@ -50,7 +50,7 @@ class BrowserTest extends BrowserTestBase {
   /**
    * Tests the creation of a node through the user interface.
    */
-  function testNodeCreate() {
+  public function testNodeCreate() {
     $this->drupalLogin($this->user);
 
     $title = $this->randomString();
